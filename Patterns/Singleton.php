@@ -1,6 +1,6 @@
 <?php
 
-class Singleton
+final class Singleton
 {
     private static $_instance;
 
