@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns;
+namespace Patterns\Structural;
 /**
  * Registry is hash
  */

@@ -1,7 +1,7 @@
 <?php 
 
-class Animal {
-
+class Animal
+{
 	protected $name;
 
 	function __construct($name)

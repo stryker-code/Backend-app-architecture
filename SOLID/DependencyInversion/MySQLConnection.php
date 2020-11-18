@@ -1,9 +1,11 @@
 <?php
 
+namespace SOLID\DependencyInversion;
 
-class MySQLConnection implements DBConnectionInterface {
-
-    public function connect() {
+class MySQLConnection implements IDatabaseConnection
+{
+    public function connect()
+    {
         // Return the MySQL connection...
     }
 }
