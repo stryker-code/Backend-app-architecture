@@ -25,7 +25,7 @@
                     <option value="<"><</option>
                     <option value="=">=</option>
                 </select>          
-                <input name="fieldvalue" type="text" id="number" class="form-control" placeholder="Value">
+                <input name="fieldalue" type="text" id="number" class="form-control" placeholder="Value">
                 <button id="delete" class="btn btn-danger" type="button">Delete</button> 
                 <div id="area-rules">             
                 </div>     

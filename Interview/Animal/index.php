@@ -5,7 +5,7 @@ echo '<Pre>';
 $catName = 'garfield';
 $cat = new Cat($catName);
 
-if ($cat->getName() === $catName){
+if ($cat->getName() === $catName) {
 	echo "Cat name is '{$catName}'".PHP_EOL;
 }
 

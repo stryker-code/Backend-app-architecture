@@ -54,7 +54,7 @@ function printCategory($data, $level = 0, $head = 0, $prefix = false)
         echo $prefix.$data[$key][$level].END_LINE;
         unset($data[$key][$level]);
     } else {
-        $prefix = substr($prefix,0,-1);
+        $prefix = substr($prefix, 0, -1);
     }
 
     printCategory($data, $level, $head, $prefix);

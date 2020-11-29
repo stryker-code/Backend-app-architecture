@@ -7,8 +7,8 @@ define('AGENT_MOZILLA',"Mozilla/5.0 (Windows NT 6.1; rv:53.0) Gecko/20100101 Fir
 // Current Browser
 define('CURRENT_AGENT',$_SERVER['HTTP_USER_AGENT']);
 
-class GitApiFacade {
-
+class GitApiFacade
+{
     private $output;
 
     private static $userAgent = CURRENT_AGENT;

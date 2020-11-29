@@ -1,4 +1,4 @@
-$("form").validate({
+$('form').validate({
     rules: {
       fields: "required",
       operators:  "required",
