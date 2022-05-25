@@ -4,6 +4,7 @@ namespace SOLID\InterfaceSegregation;
 
 /**
  * Interface IVehicle
+ *
  * @package SOLID\InterfaceSegregation
  *
  * This principle defines that a class should never implement

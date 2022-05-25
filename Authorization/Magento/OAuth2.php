@@ -2,7 +2,7 @@
 
 class MagentoApiFacade
 {
-    private function _getToken(string $credentials)
+    private function getToken(string $credentials)
     {
         $curl = curl_init(
             'https:///rest/all/V1/integration/admin/token'

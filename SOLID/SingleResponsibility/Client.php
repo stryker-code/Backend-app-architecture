@@ -12,7 +12,7 @@ namespace SOLID\SingleResponsibility;
 
 class Client
 {
-    private $_email;
+    private $email;
 
     public function store()
     {

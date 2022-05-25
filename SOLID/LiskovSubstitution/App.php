@@ -4,6 +4,7 @@ namespace SOLID\LiskovSubstitution;
 
 /**
  * Class App
+ *
  * @package SOLID\LiskovSubstitution
  *
  * The principle says that objects must be replaceable

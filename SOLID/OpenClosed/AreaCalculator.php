@@ -4,6 +4,7 @@ namespace SOLID\OpenClosed;
 
 /**
  * Class AreaCalculator
+ *
  * @package SOLID\OpenClosed
  *
  * Objects or entities should be open for extension but closed for modification.
