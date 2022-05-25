@@ -54,9 +54,7 @@ abstract class Autoloader
             $path = self::$projectPath.$directoryName.DIRECTORY_SEPARATOR;
         }
 
-        $result = self::initClass($path, $className);
-
-        if ($result) {
+        if (self::initClass($path, $className)) {
             return true;
         }
 
@@ -75,9 +73,7 @@ abstract class Autoloader
 
             $path = $object->getPathname().DIRECTORY_SEPARATOR;
 
-            $result = self::initClass($path, $className);
-
-            if ($result) {
+            if (self::initClass($path, $className)) {
                 return true;
             }
 
