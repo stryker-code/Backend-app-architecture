@@ -1,6 +1,6 @@
 <?php
 
-namespace SOLID\SingleResponsibility;
+namespace SOLID\DependencyInversion;
 
 /**
  * In this case, the UserDB class depends directly from the MySQL database.
@@ -15,12 +15,12 @@ namespace SOLID\SingleResponsibility;
 
 class User
 {
-    private $_dbConnection;
+    protected DatabaseConnectionInterface $dbConnection;
 
     // Must be IDatabaseConnection against strict MySQLConnection!
-    public function __construct(DBConnectionInterface $dbConnection)
+    public function __construct(DatabaseConnectionInterface $dbConnection)
     {
-        $this->_dbConnection = $dbConnection;
+        $this->dbConnection = $dbConnection;
     }
 
     public function store(User $user)

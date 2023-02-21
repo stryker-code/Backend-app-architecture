@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Pool of objects
  */
@@ -7,7 +8,7 @@ class Factory
     /**
      * @var Product[]
      */
-    protected static $products = array();
+    protected static array $products = array();
 
     /**
      * Add product to pool
@@ -26,9 +27,9 @@ class Factory
      * @param integer|string $id - product identifier
      * @return Product $product
      */
-    public static function getProduct($id)
+    public static function getProduct($id): ?Product
     {
-        return isset(self::$products[$id]) ? self::$products[$id] : null;
+        return self::$products[$id] ?? null;
     }
 
     /**
