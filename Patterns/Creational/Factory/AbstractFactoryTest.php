@@ -1,9 +1,19 @@
 ﻿<?php
 
-//Config::$factory = 2;
 
-$factory = FactoryProvider::get();
+require_once __DIR__ . DIRECTORY_SEPARATOR.'Autoloader.php';
 
-$service = new ProductService();
 
-$service->createProducts($factory);
+Autoloader::register();
+
+
+        $factory = FactoryProvider::get();
+
+        var_dump($factory);
+        exit;
+
+        $service = new ProductService();
+
+        $service->createProducts($factory);
+
+

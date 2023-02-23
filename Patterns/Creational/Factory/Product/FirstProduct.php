@@ -8,8 +8,8 @@ class FirstProduct implements ProductInterface
         var_dump($this->getName());
     }
 
-    public function getName() {
-
+    public function getName(): string
+    {
         return 'The product from the WooCommerceFactory factory';
     }
 
