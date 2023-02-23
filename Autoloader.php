@@ -2,18 +2,27 @@
 
 abstract class Autoloader
 {
-    private static string $projectPath = __DIR__.DIRECTORY_SEPARATOR;
+    const DEFAULT_DIR_LEVEL_UP = 1;
+
+    private static string $projectPath;
 
     private static array $excludeDir = array(
         'directory',
         'templates',
         'storage',
         'public',
-        'vendor'
+        'vendor',
+        '.git',
+        '.idea'
     );
 
-    public static function register()
+    /**
+     * @param int $level
+     */
+    public static function register(int $level = self::DEFAULT_DIR_LEVEL_UP)
     {
+        self::setProjectPath($level);
+
         spl_autoload_register('self::initClasses');
         spl_autoload_extensions('.php');
     }
@@ -26,17 +35,15 @@ abstract class Autoloader
         self::directoryIterator($className);
     }
 
-    /**
-     * @param $path
-     * @param $className
-     * @return bool
-     */
     private static function initClass($path, $className): bool
     {
-        $filePath = $path.$className.'.php';
+        $className = str_replace("\\", DIRECTORY_SEPARATOR, $className);
+
+        $filePath = $path . $className . '.php';
 
         if (file_exists($filePath)) {
             require_once $filePath;
+
             return true;
         }
 
@@ -51,7 +58,7 @@ abstract class Autoloader
         $path = self::$projectPath;
 
         if ($directoryName) {
-            $path = self::$projectPath.$directoryName.DIRECTORY_SEPARATOR;
+            $path = self::$projectPath . $directoryName . DIRECTORY_SEPARATOR;
         }
 
         if (self::initClass($path, $className)) {
@@ -67,11 +74,11 @@ abstract class Autoloader
 
             $objectName = $object->getFilename();
 
-            if (!self::isAllowedDirectory($objectName)){
+            if (!self::isAllowedDirectory($objectName)) {
                 continue;
             }
 
-            $path = $object->getPathname().DIRECTORY_SEPARATOR;
+            $path = $object->getPathname() . DIRECTORY_SEPARATOR;
 
             if (self::initClass($path, $className)) {
                 return true;
@@ -80,28 +87,27 @@ abstract class Autoloader
             $path = $objectName;
 
             if ($directoryName) {
-                $path = $directoryName.DIRECTORY_SEPARATOR.$objectName;
+                $path = $directoryName . DIRECTORY_SEPARATOR . $objectName;
             }
 
-            self::directoryIterator($className, $path);
+            if (self::directoryIterator($className, $path)) {
+                return true;
+            }
         }
     }
 
-    /**
-     * @param string $directoryName
-     * @return bool
-     */
     private static function isAllowedDirectory(string $directoryName): bool
     {
         return !in_array($directoryName, static::$excludeDir);
     }
 
-    /**
-     * @param DirectoryIterator $object
-     * @return bool
-     */
     private static function isDirectory(DirectoryIterator $object): bool
     {
         return !$object->isDot() && $object->isDir();
+    }
+
+    private static function setProjectPath(int $level)
+    {
+        self::$projectPath = (dirname(__FILE__, $level).DIRECTORY_SEPARATOR);
     }
 }

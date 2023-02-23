@@ -1,19 +1,17 @@
 ﻿<?php
 
-
-require_once __DIR__ . DIRECTORY_SEPARATOR.'Autoloader.php';
-
+require_once dirname(__FILE__, 4) . DIRECTORY_SEPARATOR . 'Autoloader.php';
 
 Autoloader::register();
 
 
-        $factory = FactoryProvider::get();
+$factory = FactoryProvider::get();
 
-        var_dump($factory);
-        exit;
+var_dump($factory);
+exit;
 
-        $service = new ProductService();
+$service = new ProductService();
 
-        $service->createProducts($factory);
+$service->createProducts($factory);
 
 
