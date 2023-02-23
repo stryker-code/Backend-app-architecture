@@ -2,7 +2,7 @@
 
 namespace SOLID\DependencyInversion;
 
-class MySQLConnection implements IDatabaseConnection
+class MySQLConnection implements DatabaseConnectionInterface
 {
     public function connect()
     {

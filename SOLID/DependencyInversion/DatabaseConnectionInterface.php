@@ -2,7 +2,7 @@
 
 namespace SOLID\DependencyInversion;
 
-interface IDatabaseConnection
+interface DatabaseConnectionInterface
 {
     public function connect();
 }

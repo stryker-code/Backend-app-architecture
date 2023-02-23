@@ -1,9 +1,11 @@
 <?php
 
-/** Prototype - a pre-initialized and saved object.
-If necessary, it is cloned
-Some fabric */
-
+/**
+ * Prototype - a pre-initialized and saved object.
+ * If necessary, it is cloned some fabric
+ *
+ * Class Factory
+ */
 class Factory
 {
     /**
@@ -12,7 +14,7 @@ class Factory
     private $product;
 
     /**
-     * @param Product $product
+     * @param StdClass $product
      */
     public function __construct(StdClass $product)
     {
@@ -21,8 +23,6 @@ class Factory
 
     /**
      * Return new product via clone exist product
-     *
-     * @return Product
      */
     public function getProduct()
     {
