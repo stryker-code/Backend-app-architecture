@@ -14,9 +14,11 @@ class Client
 {
     private string $email;
 
-    public function store()
+    /**
+     * Store attributes into a database...
+     * This method should be in another class;
+     */
+    public function store(): void
     {
-        // Store attributes into a database...
-        // This method should be in another class;
     }
 }

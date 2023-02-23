@@ -6,12 +6,16 @@ use Exception;
 
 class Car implements IVehicle
 {
-    public function drive()
+    public function drive(): string
     {
-        echo 'Driving a car!';
+        return 'Driving a car!';
     }
 
-    public function fly()
+    /**
+     * Redundant interface method implementation
+     *
+     */
+    public function fly(): string
     {
         throw new Exception('Not implemented method');
     }

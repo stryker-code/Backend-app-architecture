@@ -6,9 +6,14 @@ use Exception;
 
 class Airplane implements IVehicle
 {
-    public function drive()
+    /**
+     * Redundant interface method implementation
+     *
+     * @throws Exception
+     */
+    public function drive(): string
     {
-        throw new Exception('Not implemented method');
+        throw new Exception('Airplane could not drive');
     }
 
     public function fly(): string

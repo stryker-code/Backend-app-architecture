@@ -4,13 +4,13 @@ namespace SOLID\InterfaceSegregation;
 
 class FutureCar implements IVehicle
 {
-    public function drive()
+    public function drive(): string
     {
-        echo 'Driving a future car!';
+        return 'Driving a future car!';
     }
 
-    public function fly()
+    public function fly(): string
     {
-        echo 'Flying a future car!';
+        return 'Flying a future car!';
     }
 }

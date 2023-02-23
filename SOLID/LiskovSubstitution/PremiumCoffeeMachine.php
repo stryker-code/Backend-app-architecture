@@ -6,6 +6,9 @@ use Exception;
 
 class PremiumCoffeeMachine extends BasicCoffeeMachine
 {
+    /**
+     * @throws Exception
+     */
     public function brewCoffee($selection): string
     {
         switch ($selection) {

@@ -17,6 +17,6 @@ namespace SOLID\InterfaceSegregation;
 
 interface IVehicle
 {
-    public function drive();
-    public function fly();
+    public function drive(): string;
+    public function fly(): string;
 }

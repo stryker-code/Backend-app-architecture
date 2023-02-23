@@ -11,7 +11,7 @@ namespace SOLID\OpenClosed;
  */
 class AreaCalculator
 {
-    protected $shapes;
+    protected IShape $shapes;
 
     public function __construct($shapes = [])
     {
