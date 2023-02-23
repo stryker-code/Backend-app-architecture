@@ -2,7 +2,7 @@
 
 final class Singleton
 {
-    private static $_instance;
+    private static $instance;
 
     // Protect from creation via 'new Singleton'
     private function __construct()
@@ -22,16 +22,16 @@ final class Singleton
     // Return only single instance of class
     public static function getInstance(): Singleton
     {
-        if (!isset(self::$_instance)) {
-            self::$_instance = new self();
+        if (!isset(self::$instance)) {
+            self::$instance = new self();
         }
 
-        return self::$_instance;
+        return self::$instance;
     }
 
     public function displayHashCode()
     {
-        echo spl_object_hash(self::$_instance).PHP_EOL;
+        echo spl_object_hash(self::$instance) . PHP_EOL;
     }
 }
 
