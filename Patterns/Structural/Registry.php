@@ -40,7 +40,7 @@ class Product
      * @param string $key
      * @return void
      */
-    final public static function removeProduct($key)
+    final public static function removeProduct(string $key)
     {
         if (array_key_exists($key, self::$data)) {
             unset(self::$data[$key]);
