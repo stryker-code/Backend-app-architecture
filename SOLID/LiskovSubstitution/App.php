@@ -16,10 +16,10 @@ class App
 {
     public function __construct(User $user, $selection)
     {
-        $this->_getCoffeeMachine($user)->brewCoffee($selection);
+        $this->getCoffeeMachine($user)->brewCoffee($selection);
     }
 
-    private function _getCoffeeMachine(User $user)
+    private function getCoffeeMachine(User $user)
     {
         switch ($user->getPlan()) {
             case 'PREMIUM':

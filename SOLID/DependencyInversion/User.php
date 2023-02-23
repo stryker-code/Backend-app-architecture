@@ -3,7 +3,7 @@
 namespace SOLID\DependencyInversion;
 
 /**
- * In this case, the UserDB class depends directly from the MySQL database.
+ * In this case, the UserDB class depends on directly from the MySQL database.
  * That means that if we would change the database engine in use we need
  * to rewrite this class and violate the Open-Close Principle.
  *

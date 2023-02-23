@@ -7,9 +7,9 @@ namespace Patterns\Structural;
 class Product
 {
     /**
-     * @var mixed[]
+     * @var array
      */
-    protected static $data = array();
+    protected static array $data = [];
 
     /**
      * Adding value to registry
@@ -18,7 +18,7 @@ class Product
      * @param mixed $value
      * @return void
      */
-    public static function set($key, $value)
+    public static function set(string $key, $value)
     {
         self::$data[$key] = $value;
     }
@@ -29,9 +29,9 @@ class Product
      * @param string $key
      * @return mixed
      */
-    public static function get($key)
+    public static function get(string $key)
     {
-        return isset(self::$data[$key]) ? self::$data[$key] : null;
+        return self::$data[$key] ?? null;
     }
 
     /**

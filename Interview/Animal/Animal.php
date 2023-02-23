@@ -1,21 +1,15 @@
 <?php 
 
-class Animal
+abstract class Animal
 {
 	protected string $name;
 
-    /**
-     * Animal constructor.
-     *
-     * @param $name
-     */
-	function __construct($name)
+	function __construct(string $name)
     {
         $this->name = $name;
 	}
 
-
-	function getName(): string
+	public function getName(): string
     {
 		return $this->name;
 	}

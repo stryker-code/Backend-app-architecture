@@ -2,9 +2,11 @@
 
 namespace SOLID\LiskovSubstitution;
 
-class BasicCoffeeMachine
+use Exception;
+
+class BasicCoffeeMachine implements ICoffeeMachine
 {
-    public function brewCoffee($selection)
+    public function brewCoffee(string $selection): string
     {
         switch ($selection) {
             case 'ESPRESSO':
@@ -14,8 +16,9 @@ class BasicCoffeeMachine
         }
     }
 
-    protected function brewEspresso()
+    protected function brewEspresso(): string
     {
         // Brew an espresso...
+        return 'hot';
     }
 }

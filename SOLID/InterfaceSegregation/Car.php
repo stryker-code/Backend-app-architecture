@@ -2,6 +2,8 @@
 
 namespace SOLID\InterfaceSegregation;
 
+use Exception;
+
 class Car implements IVehicle
 {
     public function drive()

@@ -4,5 +4,5 @@ namespace SOLID\OpenClosed;
 
 interface IShape
 {
-    public function getArea();
+    public function getArea(): float;
 }

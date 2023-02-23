@@ -4,16 +4,16 @@ namespace SOLID\OpenClosed;
 
 class Rectangle implements IShape
 {
-    private $width;
-    private $height;
+    private float $width;
+    private float $height;
 
-    public function __construct(int $width, int $height)
+    public function __construct(float $width, float $height)
     {
         $this->width = $width;
         $this->height = $height;
     }
 
-    public function getArea(): int
+    public function getArea(): float
     {
         return $this->width * $this->height;
     }

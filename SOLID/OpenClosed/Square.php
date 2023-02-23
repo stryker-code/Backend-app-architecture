@@ -4,15 +4,15 @@ namespace SOLID\OpenClosed;
 
 class Square implements IShape
 {
-    private $_length;
+    private int $length;
 
     public function __construct(int $length)
     {
-        $this->_length = $length;
+        $this->length = $length;
     }
 
-    public function getArea()
+    public function getArea() :float
     {
-        return pow($this->_length, 2);
+        return (float)pow($this->length, 2);
     }
 }

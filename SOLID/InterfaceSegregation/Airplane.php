@@ -2,6 +2,8 @@
 
 namespace SOLID\InterfaceSegregation;
 
+use Exception;
+
 class Airplane implements IVehicle
 {
     public function drive()
@@ -9,8 +11,8 @@ class Airplane implements IVehicle
         throw new Exception('Not implemented method');
     }
 
-    public function fly()
+    public function fly(): string
     {
-        echo 'Flying an airplane!';
+        return 'Flying an airplane!';
     }
 }

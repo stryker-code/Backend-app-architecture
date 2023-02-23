@@ -2,24 +2,32 @@
 
 final class Singleton
 {
-    private static $instance;
+    private static self $instance;
 
-    // Protect from creation via 'new Singleton'
+    /**
+     * Protect from creation via 'new Singleton
+     */
     private function __construct()
     {
     }
 
-    // Protect from creation via unserialize
+    /**
+     * Protect from creation via unserialize
+     */
     private function __wakeup()
     {
     }
 
-    // Protect from creation via cloning
+    /**
+     * Protect from creation via cloning
+     */
     private function __clone()
     {
     }
 
-    // Return only single instance of class
+    /**
+     * Return only single instance of class
+     */
     public static function getInstance(): Singleton
     {
         if (!isset(self::$instance)) {

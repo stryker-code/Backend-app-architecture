@@ -4,5 +4,5 @@ namespace SOLID\LiskovSubstitution;
 
 interface ICoffeeMachine
 {
-    public function brewCoffee($selection);
+    public function brewCoffee(string $selection);
 }

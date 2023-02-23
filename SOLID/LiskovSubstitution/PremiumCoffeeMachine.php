@@ -2,9 +2,11 @@
 
 namespace SOLID\LiskovSubstitution;
 
+use Exception;
+
 class PremiumCoffeeMachine extends BasicCoffeeMachine
 {
-    public function brewCoffee($selection)
+    public function brewCoffee($selection): string
     {
         switch ($selection) {
             case 'ESPRESSO':
@@ -16,8 +18,9 @@ class PremiumCoffeeMachine extends BasicCoffeeMachine
         }
     }
 
-    protected function brewVanillaCoffee()
+    protected function brewVanillaCoffee(): string
     {
         // Brew a vanilla coffee...
+        return 'vanilla';
     }
 }

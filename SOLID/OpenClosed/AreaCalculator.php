@@ -13,7 +13,7 @@ class AreaCalculator
 {
     protected $shapes;
 
-    public function __construct($shapes = array())
+    public function __construct($shapes = [])
     {
         $this->shapes = $shapes;
     }
