@@ -47,7 +47,7 @@ function printCategory($data, $level = 0, $head = 0, $prefix = false)
     echo $prefix.$data[$level][$key].END_LINE;
     unset($data[$level][$key]);
 
-    if (_hasChild($key, $data)) {
+    if (hasChild($key, $data)) {
         $level = key($data[$key]);
         $prefix .= MENU_SEPARATOR;
         $head = _getHead($head, $key, $data, $prefix);
@@ -60,7 +60,7 @@ function printCategory($data, $level = 0, $head = 0, $prefix = false)
     printCategory($data, $level, $head, $prefix);
 }
 
-function _hasChild($key, $data): bool
+function hasChild($key, $data): bool
 {
     return array_key_exists($key, $data) && $data[$key];
 }
