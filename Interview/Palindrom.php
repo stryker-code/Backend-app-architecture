@@ -1,8 +1,8 @@
 ﻿<?php header('Content-Type: text/html; charset=windows-1251'); ?>
  	
  	<form action="" method="post">
-		<input type="text" name="inputString" value="" placeholder="Введите строку">
-		<input type="submit" value="Проверить">	
+		<input type="text" name="inputString" value="" placeholder="Input string">
+		<input type="submit" value="Check">
 	</form>
 	
 <?php
